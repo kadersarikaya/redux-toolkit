@@ -1,23 +1,29 @@
 # RTK
 
-## createSlice 
-Redux'ta state management yapmayı istediğimiz her bir özellik için bize bir slice (bölüm) oluşturur.
-slice'ı tanımlamak için bir 'name', 'initial state' ve state'in nasıl update olacağını belirtmek için reducer/lar'a ihtiyacımız vardır.  
+## createSlice:
 
-## configureStore
-Store'ı konfigüre etmemizi sağlar ve reducer slice tanımlanır.
+Redux Toolkit'in createSlice fonksiyonu, bir Redux slice'ını (bölümünü) tanımlamak için kullanılır. Bir slice, Redux store'unun bir parçasıdır ve belirli bir özelliği yöneten bir reducer, başlangıç durumu (initial state) ve action'ları içerir.
 
-## cresteAsyncThunk
-Asenkron operasyonları yönetmemizi sağlar. Bu fonksiyon, bir asenkron işlemi gerçekleştiren bir action creator oluşturmanıza olanak tanır ve genellikle API çağrıları, veritabanı etkileşimleri gibi asenkron operasyonları işlemek için kullanılır.
+## configureStore:
 
-## Reducer slice
-createSlice'da oluşturulan reducer store'da reducer slice'ında depolanır ve state'deki güncellemleri tutar.
+Redux Toolkit'in configureStore fonksiyonu, Redux store'unu yapılandırmak için kullanılır. Bu fonksiyon, reducer'ları, middleware'leri ve diğer store ayarlarını bir araya getirir.
 
-## Provider
-App'imizi Provider ile sarmalarız ve store'u props olarak göndeririz böylece her yerden redux'da tutulan değerlere ulaşabiliriz. 
+## createAsyncThunk:
 
-## useSelector
-Store'daki datayı, önyüzde, useSelector aracılığıyla okuyabiliriz.
+Bu fonksiyon, asenkron operasyonları yönetmek için kullanılır. Redux Toolkit'in bir parçası olarak gelir ve genellikle API çağrıları gibi asenkron işlemleri yönetmek için kullanılır.
 
-## useDispatch
-Önyüzde tetiklenen action'ları useDispatch ile gönderebiliriz.
+## Reducer slice:
+
+createSlice ile oluşturulan reducer, bir slice'ın içinde bulunur. Bu reducer, slice'ın başlangıç durumunu ve action'lara nasıl yanıt verileceğini belirler.
+
+## Provider:
+
+Provider, React uygulamasında Redux store'uyla bağlantı kurmamıza yardımcı olan bir bileşendir. Bu sayede Redux store'daki verilere erişebiliriz.
+
+## useSelector:
+
+useSelector, React uygulamasındaki bir bileşen içindeki Redux store'dan veri okumak için kullanılır. Bu hook sayesinde store'daki güncel verilere erişebiliriz.
+
+## useDispatch:
+
+useDispatch, Redux store'da tanımlanan action'ları tetiklemek için kullanılır. Bu hook sayesinde action'ları önyüzden çağırabiliriz.
