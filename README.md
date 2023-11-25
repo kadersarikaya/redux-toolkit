@@ -1,36 +1,23 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# RTK
 
-## Getting Started
+## createSlice 
+Redux'ta state management yapmayı istediğimiz her bir özellik için bize bir slice (bölüm) oluşturur.
+slice'ı tanımlamak için bir 'name', 'initial state' ve state'in nasıl update olacağını belirtmek için reducer/lar'a ihtiyacımız vardır.  
 
-First, run the development server:
+## configureStore
+Store'ı konfigüre etmemizi sağlar ve reducer slice tanımlanır.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## cresteAsyncThunk
+Asenkron operasyonları yönetmemizi sağlar. Bu fonksiyon, bir asenkron işlemi gerçekleştiren bir action creator oluşturmanıza olanak tanır ve genellikle API çağrıları, veritabanı etkileşimleri gibi asenkron operasyonları işlemek için kullanılır.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Reducer slice
+createSlice'da oluşturulan reducer store'da reducer slice'ında depolanır ve state'deki güncellemleri tutar.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Provider
+App'imizi Provider ile sarmalarız ve store'u props olarak göndeririz böylece her yerden redux'da tutulan değerlere ulaşabiliriz. 
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## useSelector
+Store'daki datayı, önyüzde, useSelector aracılığıyla okuyabiliriz.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## useDispatch
+Önyüzde tetiklenen action'ları useDispatch ile gönderebiliriz.
